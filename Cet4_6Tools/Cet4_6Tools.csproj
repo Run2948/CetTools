@@ -43,6 +43,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Aspose.Words, Version=13.2.0.0, Culture=neutral, PublicKeyToken=00725b1ceb58d0a9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\Aspose.Words.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -88,19 +92,84 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Digital\163821\20163821001.jpg" />
+    <Content Include="Digital\163821\20163821002.jpg" />
+    <Content Include="Digital\163821\20163821004.jpg" />
+    <Content Include="Digital\163821\20163821005.jpg" />
+    <Content Include="Digital\163821\20163821007.jpg" />
+    <Content Include="Digital\163821\20163821009.jpg" />
+    <Content Include="Digital\163821\20163821011.JPG" />
+    <Content Include="Digital\163821\20163821013.jpg" />
+    <Content Include="Digital\163821\20163821015.jpg" />
+    <Content Include="Digital\163821\20163821016.jpg" />
+    <Content Include="Digital\163821\20163821017.JPG" />
+    <Content Include="Digital\163821\20163821019.jpg" />
+    <Content Include="Digital\163821\20163821020.jpg" />
+    <Content Include="Digital\163821\20163821021.jpg" />
+    <Content Include="Digital\163821\20163821022.jpg" />
+    <Content Include="Digital\163821\20163821024.jpg" />
+    <Content Include="Digital\163821\20163821026.jpg" />
+    <Content Include="Digital\163821\20163821027.JPG" />
+    <Content Include="Digital\163821\20163821031.jpg" />
+    <Content Include="Digital\163821\20163821033.jpg" />
+    <Content Include="Digital\163821\20163821034.jpg" />
+    <Content Include="Digital\163821\20163821035.jpg" />
+    <Content Include="Digital\163821\20163821036.JPG" />
+    <Content Include="Digital\163821\20163821038.jpg" />
+    <Content Include="Digital\163821\20163821040.jpg" />
+    <Content Include="Digital\163821\20163821041.jpg" />
+    <Content Include="Digital\163821\20163821042.jpg" />
+    <Content Include="Digital\163821\20163821043.jpg" />
+    <Content Include="Digital\163821\20163821044.jpg" />
+    <Content Include="Digital\163821\20163821045.jpg" />
+    <Content Include="Digital\163821\20163821046.jpg" />
+    <Content Include="Digital\163821\20163821047.jpg" />
+    <Content Include="Digital\163821\20163821048.jpg" />
+    <Content Include="Digital\163821\20163821049.jpg" />
+    <Content Include="Digital\163821\20163821050.jpg" />
+    <Content Include="Digital\163821\20163821052.jpg" />
+    <Content Include="Digital\163821\20163825001.JPG" />
+    <Content Include="Digital\163821\20163825003.jpg" />
+    <Content Include="Digital\163821\20163825006.JPG" />
+    <Content Include="Digital\163821\20163825008.JPG" />
+    <Content Include="Digital\163821\20163825010.JPG" />
+    <Content Include="Digital\163821\20163825014.jpg" />
+    <Content Include="Digital\163821\20163825015.JPG" />
+    <Content Include="Digital\163821\20163825019.JPG" />
+    <Content Include="Digital\163821\20163825020.JPG" />
+    <Content Include="Digital\163821\20163825021.JPG" />
+    <Content Include="Digital\163821\20163825022.JPG" />
+    <Content Include="Digital\163821\20163825024 .JPG" />
+    <Content Include="Digital\163821\20163825029.JPG" />
+    <Content Include="Digital\163821\20163825032.JPG" />
+    <Content Include="Digital\163821\20163825039.jpg" />
+    <Content Include="Digital\163821\20163825040.JPG" />
+    <Content Include="Digital\163821\20163825042.jpg" />
+    <Content Include="Digital\163821\20163825046 .JPG" />
+    <Content Include="Digital\163821\20163825049.jpg" />
+    <Content Include="Digital\163821\20163825053.jpg" />
+    <Content Include="Digital\163821\20163825054.JPG" />
+    <Content Include="Digital\163821\20183891001.JPG" />
+    <Content Include="Digital\163821\20183891002.jpg" />
     <Content Include="Global.asax" />
+    <Content Include="Libs\Aspose.Words.dll" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ReplaceAndInsertImage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
     <None Include="packages.config" />
+    <Content Include="Templates\Template-163821.doc" />
+    <Content Include="Views\Home\Test.cshtml" />
+    <Content Include="Templates\Template.doc" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -110,8 +179,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
