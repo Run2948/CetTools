@@ -151,6 +151,7 @@
     <Content Include="Digital\163821\20163825054.JPG" />
     <Content Include="Digital\163821\20183891001.JPG" />
     <Content Include="Digital\163821\20183891002.jpg" />
+    <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Libs\Aspose.Words.dll" />
     <Content Include="Web.config" />
