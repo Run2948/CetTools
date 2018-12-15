@@ -1,43 +1,117 @@
 ﻿
 @{
     Layout = null;
+    ViewBag.Title = "四六级报名统计-模板制作";
 }
 
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>模板制作</title>
+    <title>@ViewBag.Title</title>
     <link href="https://cdn.bootcss.com/twitter-bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.bootcss.com/bootstrap-fileinput/4.5.1/css/fileinput.min.css" rel="stylesheet">
+    <style type="text/css">
+        .row {
+            margin: 20px 0 20px 0;
+        }
+
+        .alert {
+            padding: 15px 15px 0 15px;
+        }
+    </style>
     <script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap-fileinput/4.5.1/js/fileinput.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap-fileinput/4.5.1/js/locales/zh.min.js"></script>
     <script src="https://cdn.bootcss.com/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <div class="container" style="padding:10px 0 10px 0;">
-        <button class="btn btn-success">模板下载</button>
-    </div>
-    <div class="container kv-main">
-        <form enctype="multipart/form-data">
-            <div class="form-group">
-                <input id="file-1" type="file" multiple class="file" data-overwrite-initial="false" data-min-file-count="2">
+    <div class="container">
+        <h1 style="">大学生四六级报名统计</h1>
+        <div class="row">
+            <div class="alert alert-success" role="alert">
+                <h4>第一步：基础模板下载</h4>
             </div>
-        </form>
-        <script type="text/javascript">
-            $("#file-1").fileinput({
-                uploadUrl: 'http://www.baidu.com', // you must set a valid URL here else you will get an error
-                allowedFileExtensions : ['doc', 'docx'],
-                overwriteInitial: false,
-                maxFileSize: 5000,
-                maxFilesNum: 10,
-                //allowedFileTypes: ['image', 'video', 'flash'],
-                slugCallback: function(filename) {
-                    return filename.replace('(', '_').replace(']', '_');
-                }
-	        });
-        </script>
+            <form class="form-inline">
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon">基础模板：</div>
+                        <input type="text" class="form-control" value="Template.doc" />
+                        <div class="input-group-addon">用户可下载该模板，根据班级人数来自定义模板。</div>
+                    </div>
+                </div>
+                <button class="btn btn-primary">模板下载</button>
+            </form>
+        </div>
+        <div class="row">
+            <div class="alert alert-success" role="alert">
+                <h4>第二步：导入自定义模板和电子照</h4>
+            </div>
+            <form enctype="multipart/form-data">
+                <div class="form-group">
+                    <input id="file-1" type="file" class="file-loading" data-browse-on-zone-click="true" />
+                    <h2></h2>
+                    <input id="file-2" type="file" class="file-loading" multiple data-browse-on-zone-click="true" webkitdirectory />
+                </div>
+            </form>
+        </div>
+        <div class="row">
+            <div class="alert alert-success" role="alert">
+                <h4>第三步：导出最终结果</h4>
+            </div>
+            <form class="form-inline">
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon">导出结果：</div>
+                        <input type="text" class="form-control" value="Outcome.doc" />
+                        <div class="input-group-addon">用户导入自定义模板并上传电子照后即可导出结果。</div>
+                    </div>
+                </div>
+                <button class="btn btn-primary">导出结果</button>
+            </form>
+        </div>
     </div>
+    <script type="text/javascript">
+        $("#file-1").fileinput({
+            language: 'zh', //设置语言
+            browseLabel: '选择 模板文件...',
+            uploadUrl: 'http://www.baidu.com', // you must set a valid URL here else you will get an error
+            allowedFileExtensions: ['doc', 'docx'],
+            overwriteInitial: false,
+            maxFileSize: 5000,
+            //maxFilesNum: 1,
+            maxFileCount: 1, //表示允许同时上传的最大文件个数
+            validateInitialCount: true,
+            //allowedFileTypes: ['image', 'video', 'flash'],
+            previewFileIcon: "<i class='glyphicon glyphicon-king'></i>",
+            //previewFileIconSettings: {
+            //    'doc': '<i class="fas fa-file-word text-primary"></i>',
+            //},
+            //previewFileExtSettings: {
+            //    'doc': function (ext) {
+            //        return ext.match(/(doc|docx)$/i);
+            //    }
+            //},
+            msgFilesTooMany: "选择上传的文件数量({n}) 超过允许的最大数值{m}！",
+            slugCallback: function (filename) {
+                return filename.replace('(', '_').replace(']', '_');
+            }
+        });
+        $("#file-2").fileinput({
+            language: 'zh', //设置语言
+            browseLabel: '选择 电子照文件夹...',
+            uploadUrl: 'http://www.baidu.com', // you must set a valid URL here else you will get an error
+            allowedFileExtensions: ['jpg', 'JPG', 'png', 'PNG'],
+            overwriteInitial: false,
+            maxFileSize: 100,
+            //maxFilesNum: 100,
+            maxFileCount: 100, //表示允许同时上传的最大文件个数
+            //allowedFileTypes: ['image', 'video', 'flash'],
+            slugCallback: function (filename) {
+                return filename.replace('(', '_').replace(']', '_');
+            }
+        });
+    </script>
 </body>
 </html>
 
