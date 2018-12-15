@@ -158,10 +158,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HistoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Clazz.cs" />
     <Compile Include="Models\ReplaceAndInsertImage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -169,8 +171,10 @@
     <Content Include="Views\web.config" />
     <None Include="packages.config" />
     <Content Include="Templates\Template-163821.doc" />
-    <Content Include="Views\Home\Test.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Templates\Template.doc" />
+    <Content Include="Views\Home\Index - 复制.cshtml" />
+    <Content Include="Views\History\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
