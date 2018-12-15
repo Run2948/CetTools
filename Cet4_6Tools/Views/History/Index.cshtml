@@ -1,0 +1,70 @@
+﻿@model List<Cet4_6Tools.Models.Clazz>
+@{
+    Layout = null;
+    ViewBag.Title = "四六级报名统计-历史记录";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>@ViewBag.Title</title>
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+        .row {
+            margin: 20px 0 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="">大学生四六级报名统计 - 历史记录</h1>
+        <div class="row">
+            <div class="span12">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>
+                                编号
+                            </th>
+                            <th>
+                                班级
+                            </th>
+                            <th>
+                                人数
+                            </th>
+                            <th>
+                                操作
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model != null && Model.Any())
+                        {
+                            foreach (var h in Model)
+                            {
+                                <tr>
+                                    <td>@(Model.IndexOf(h)+1)</td>
+                                    <td>@(h.folder)班</td>
+                                    <td>共 @(h.count) 人报名</td>
+                                    <td><a href="@Url.Action("Show",new { folder = h.folder })">导出</a></td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="3">暂无历史！</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <form class="form-inline">
+                    <a href="@Url.Action("Index","History")" class="btn btn-primary pull-right">返回首页</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

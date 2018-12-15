@@ -1,0 +1,154 @@
+﻿
+@{
+    Layout = null;
+    ViewBag.Title = "四六级报名统计-模板制作";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>@ViewBag.Title</title>
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/bootstrap-fileinput/4.5.1/css/fileinput.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/layer/2.3/skin/layer.css" rel="stylesheet">
+    <style type="text/css">
+        .row {
+            margin: 20px 0 20px 0;
+        }
+
+        .alert {
+            padding: 15px 15px 0 15px;
+        }
+    </style>
+    <script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap-fileinput/4.5.1/js/fileinput.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap-fileinput/4.5.1/js/locales/zh.min.js"></script>
+    <script src="https://cdn.bootcss.com/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="https://cdn.bootcss.com/layer/2.3/layer.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#file-1").fileinput({
+                language: 'zh', //设置语言
+                browseLabel: '选择 模板文件...',
+                uploadUrl: '@Url.Action("UploadTemplate")', // you must set a valid URL here else you will get an error
+                allowedFileExtensions: ['doc', 'docx'],
+                textEncoding: 'UTF-8',
+                //showPreview: false,//是否显示预览
+                //uploadAsync: true, //默认异步上传
+                browseClass: "btn btn-primary", //按钮样式
+                overwriteInitial: false,
+                removeFromPreviewOnError: true,//是否移除校验文件失败的文件
+                maxFileSize: 5000,//单位为kb，如果为0表示不限制文件大小
+                maxFilesNum: 1,//上传最大的文件数量
+                maxFileCount: 1, //表示允许同时上传的最大文件个数
+                enctype: 'multipart/form-data',
+                validateInitialCount: true,
+                //allowedFileTypes: ['image', 'video', 'flash'],
+                //previewFileIcon: "<i class='glyphicon glyphicon-king'></i>",
+                //initialPreviewAsData: true, // defaults markup
+                //preferIconicPreview: true,// 是否优先显示图标  false 即优先显示图片
+                //previewFileIconSettings: {
+                //    'doc': '<i class="fas fa-file-word text-primary"></i>',
+                //},
+                //previewFileExtSettings: {
+                //    'doc': function (ext) {
+                //        return ext.match(/(doc|docx)$/i);
+                //    }
+                //},
+                msgFilesTooMany: "选择上传的文件数量({n}) 超过允许的最大数值{m}！",
+                layoutTemplates: {
+                    // actionDelete:'', //去除上传预览的缩略图中的删除图标
+                    actionUpload: '',//去除上传预览缩略图中的上传图标
+                    actionZoom: ''   //去除上传预览缩略图中的查看详情预览的缩略图标。
+                },
+                slugCallback: function (filename) {
+                    return filename.replace('(', '_').replace(']', '_');
+                }
+            });
+            // .on("fileuploaded", function (event, data) {
+            //    //异步上传后返回结果处理
+            //    //后台一定要返回json对象,空的也行。否则会出现提示警告。
+            //     //返回对象的同时会显示进度条，可以根据返回值进行一些功能扩展
+            //     console.log(data);
+
+            //}).on("fileerror", function (event, data, msg) {
+            //    console.log(msg);
+            //});
+
+            $("#file-2").fileinput({
+                language: 'zh', //设置语言
+                browseLabel: '选择 电子照文件夹...',
+                uploadUrl: '@Url.Action("UploadImages")', // you must set a valid URL here else you will get an error
+                allowedFileExtensions: ['jpg', 'JPG', 'png', 'PNG'],
+                textEncoding: 'UTF-8',
+                showPreview: true,//是否显示预览
+                overwriteInitial: false,
+                maxFileSize: 100,//单位为kb，如果为0表示不限制文件大小
+                maxFilesNum: 100,//上传最大的文件数量
+                maxFileCount: 100, //表示允许同时上传的最大文件个数
+                //allowedFileTypes: ['image', 'video', 'flash'],
+                validateInitialCount: true,
+                msgFilesTooMany: "选择上传的文件数量({n}) 超过允许的最大数值{m}！",
+                layoutTemplates: {
+                    actionUpload: '',//去除上传预览缩略图中的上传图标
+                },
+                slugCallback: function (filename) {
+                    return filename.replace('(', '_').replace(']', '_');
+                }
+            });
+        });
+
+        function Export() {
+            //if()
+        }
+
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1 style="">大学生四六级报名统计</h1>
+        <div class="row">
+            <div class="alert alert-success" role="alert">
+                <h4>第一步：基础模板下载</h4>
+            </div>
+            <form class="form-inline">
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon">基础模板：</div>
+                        <input type="text" class="form-control" value="Template.doc" />
+                        <div class="input-group-addon">用户可下载该模板，根据班级人数来自定义模板。</div>
+                    </div>
+                </div>
+                <a href="@Url.Action("DownloadTemplate")" class="btn btn-primary">模板下载</a>
+            </form>
+        </div>
+        <div class="row">
+            <div class="alert alert-success" role="alert">
+                <h4>第二步：导入自定义模板和电子照&nbsp;&nbsp;&nbsp;&nbsp;[注意：模板文件名称最好为班级编号]</h4>
+            </div>
+            <div class="form-group">
+                <input id="file-1" type="file" name="tmp_file" accept=".doc,.docx" class="file" data-browse-on-zone-click="true" />
+                <h2></h2>
+                <input id="file-2" type="file" accept="image/*" class="file" multiple data-browse-on-zone-click="true" webkitdirectory />
+            </div>
+        </div>
+        <div class="row">
+            <div class="alert alert-success" role="alert">
+                <h4>第三步：导出最终结果</h4>
+            </div>
+            <form class="form-inline">
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon">导出结果：</div>
+                        <input type="text" class="form-control" value="Outcome.doc" />
+                        <div class="input-group-addon">用户导入自定义模板并上传电子照后即可导出结果。</div>
+                    </div>
+                </div>
+                <button class="btn btn-primary" onclick="Export();">导出结果</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
