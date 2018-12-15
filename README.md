@@ -1,4 +1,4 @@
-# 
+ï»¿# å¤§å­¦ç”Ÿå››å…­çº§æŠ¥åç»Ÿè®¡
 
-#### 1.[]()
-#### 2.[JS×é¼şÏµÁĞ¡ª¡ªBootstrapÎÄ¼şÉÏ´«×é¼ş£ºbootstrap fileinput](https://www.cnblogs.com/landeanfen/p/5007400.html)
+#### 1.[Bootstrap File Input - Â© Kartik ](http://plugins.krajee.com/file-input)
+#### 2.[JSç»„ä»¶ç³»åˆ—â€”â€”Bootstrapæ–‡ä»¶ä¸Šä¼ ç»„ä»¶ï¼šbootstrap fileinput](https://www.cnblogs.com/landeanfen/p/5007400.html)
