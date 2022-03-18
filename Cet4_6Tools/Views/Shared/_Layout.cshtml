@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>四六级报名统计 - @ViewData["Title"]</title>
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    @await RenderSectionAsync("Styles", required: false)
+    <link href="https://cdn.bootcss.com/layer/2.3/skin/layer.css" rel="stylesheet">
+    <style type="text/css">
+        .row {
+            margin: 20px 0 20px 0;
+        }
+    </style>
+</head>
+<body>
+    @RenderBody()
+    <script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+    <script src="https://cdn.bootcss.com/layer/2.3/layer.js"></script>
+</body>
+</html>
+

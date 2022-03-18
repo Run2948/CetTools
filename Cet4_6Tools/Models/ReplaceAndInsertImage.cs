@@ -1,9 +1,5 @@
 ﻿using Aspose.Words;
-using Aspose.Words.Drawing;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using Aspose.Words.Replacing;
 
 namespace Cet4_6Tools.Models
 {
@@ -24,15 +20,12 @@ namespace Cet4_6Tools.Models
             //获取当前节点
             var node = e.MatchNode;
             //获取当前文档
-            Document doc = node.Document as Document;
-            DocumentBuilder builder = new DocumentBuilder(doc);
+            var doc = node.Document as Document;
+            var builder = new DocumentBuilder(doc);
             //将光标移动到指定节点
             builder.MoveTo(node);
             //插入图片
-            //builder.InsertImage(url);
-
-            System.Drawing.Image img = System.Drawing.Image.FromFile(url);
-            Shape shape = builder.InsertImage(img);
+            var shape = builder.InsertImage(url);
             // 设置x,y坐标和高宽.
             shape.Left = 0;
             shape.Top = 20;

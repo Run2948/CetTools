@@ -1,13 +1,9 @@
 ﻿using Aspose.Words;
+using Aspose.Words.Replacing;
 using Aspose.Words.Saving;
 using Cet4_6Tools.Models;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
+using Microsoft.AspNetCore.Mvc;
 using System.Text.RegularExpressions;
-using System.Web;
-using System.Web.Mvc;
 
 namespace Cet4_6Tools.Controllers
 {
@@ -18,13 +14,13 @@ namespace Cet4_6Tools.Controllers
         #region 历史页面
         public ActionResult Index()
         {
-            List<Clazz> list = new List<Clazz>();
-            DirectoryInfo root = new DirectoryInfo(Server.MapPath("~/Digital"));
-            foreach (DirectoryInfo d in root.GetDirectories())
+            var list = new List<Clazz>();
+            var root = new DirectoryInfo(Server.MapPath("~/Digital"));
+            foreach (var d in root.GetDirectories())
             {
                 var folder = d.Name;
-                DirectoryInfo son = new DirectoryInfo(Server.MapPath($"~/Digital/{folder}"));
-                list.Add(new Clazz(folder,son.GetFiles().Length));
+                var son = new DirectoryInfo(Server.MapPath($"~/Digital/{folder}"));
+                list.Add(new Clazz(folder, son.GetFiles().Length));
             }
             return View(list);
         }
@@ -36,23 +32,23 @@ namespace Cet4_6Tools.Controllers
         {
             string tempPath = Server.MapPath($"~/Templates/Template-{folder}.doc");
             var doc = new Document(tempPath); //载入模板
-            List<string> images = new List<string>();
-            DirectoryInfo root = new DirectoryInfo(Server.MapPath($"~/Digital/{folder}"));
-            foreach (FileInfo f in root.GetFiles())
+            var images = new List<string>();
+            var root = new DirectoryInfo(Server.MapPath($"~/Digital/{folder}"));
+            foreach (var f in root.GetFiles())
             {
                 images.Add(f.FullName);
             }
 
             for (int i = 1; i < images.Count + 1; i++)
             {
-                doc.Range.Replace($"«Number{i}»", Path.GetFileNameWithoutExtension(images[i - 1]), false, false);
-                doc.Range.Replace(new Regex($"Photo{i}&"), new ReplaceAndInsertImage(images[i - 1]), false);
+                doc.Range.Replace($"«Number{i}»", Path.GetFileNameWithoutExtension(images[i - 1]), new FindReplaceOptions() { MatchCase = false, FindWholeWordsOnly = false });
+                doc.Range.Replace(new Regex($"Photo{i}&"), "", new FindReplaceOptions() { ReplacingCallback = new ReplaceAndInsertImage(images[i - 1]) });
             }
 
             var docStream = new MemoryStream();
             doc.Save(docStream, SaveOptions.CreateSaveOptions(SaveFormat.Doc));
             return base.File(docStream.ToArray(), "application/msword", $"{folder}班(照片采集)-已完成" + ".doc");
-        } 
+        }
         #endregion
     }
 }

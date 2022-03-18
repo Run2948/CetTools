@@ -7,7 +7,7 @@ namespace Cet4_6Tools.Models
 {
     public class Clazz
     {
-        public string folder { get; set; }
+        public string? folder { get; set; }
         public int count { get; set; }
 
         public Clazz(string folder, int count)
