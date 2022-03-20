@@ -12,7 +12,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_docs", "_docs", "{5F3A230E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aspose.Crack", "Aspose.Crack\Aspose.Crack.csproj", "{8FFF2A46-83D7-4339-B280-F6672CC1315C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aspose.Crack.Core", "Aspose.Crack.Core\Aspose.Crack.Core.csproj", "{C69886F5-47CF-4F44-ADAB-65D72BA40996}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aspose.Crack.Core", "Aspose.Crack.Core\Aspose.Crack.Core.csproj", "{9BA62918-0390-4E88-96F1-8BE677012F02}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,10 +28,10 @@ Global
 		{8FFF2A46-83D7-4339-B280-F6672CC1315C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8FFF2A46-83D7-4339-B280-F6672CC1315C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8FFF2A46-83D7-4339-B280-F6672CC1315C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C69886F5-47CF-4F44-ADAB-65D72BA40996}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C69886F5-47CF-4F44-ADAB-65D72BA40996}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C69886F5-47CF-4F44-ADAB-65D72BA40996}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C69886F5-47CF-4F44-ADAB-65D72BA40996}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BA62918-0390-4E88-96F1-8BE677012F02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BA62918-0390-4E88-96F1-8BE677012F02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BA62918-0390-4E88-96F1-8BE677012F02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BA62918-0390-4E88-96F1-8BE677012F02}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
