@@ -13,8 +13,8 @@
   </ItemGroup>
 
   <ItemGroup>
-	  <PackageReference Include="Aspose.Words" Version="22.3.0" />
-  	<PackageReference Include="SkiaSharp" Version="2.80.3" />
+		<!--<PackageReference Include="Aspose.Words" Version="22.3.0" />-->
+		<PackageReference Include="Aspose.Words" Version="20.10.0" />
   </ItemGroup>
-
+	
 </Project>
