@@ -1,0 +1,115 @@
+	// Token: 0x06001DDB RID: 7643 RVA: 0x000895D4 File Offset: 0x000877D4
+	private static object \u0002(MethodBase \u0002, object \u0003, object[] \u0005, bool \u0008)
+	
+	
+		if(\u0002.Name == "op_GreaterThan" && \u0005.Length == 2 && \u0005[1] is DateTime && ((DateTime)\u0005)[1]).ToString("yyyyMMdd") == "20200827")
+        {
+			return false;
+		}
+		
+		
+		if (\u0002.Name == "op_GreaterThan" && \u0005.Length == 2 && \u0005[1] is DateTime)
+		{
+			u = (DateTime)\u0005[1];
+			if (u.ToString("yyyyMMdd") == "20200827")
+			{
+				return false;
+			}
+		}
+
+
+0	0000	ldarg.0
+1	0001	callvirt	instance string [System.Private.CoreLib]System.Reflection.MemberInfo::get_Name()
+2	0006	ldstr	"op_GreaterThan"
+3	000B	call	bool [System.Private.CoreLib]System.String::op_Equality(string, string)
+4	0010	brfalse.s	56 (0085) ldloc.0 
+5	0012	ldarg.2
+6	0013	ldlen
+7	0014	conv.i4
+8	0015	ldc.i4.2
+9	0016	bne.un.s	0 (0000) ldarg.0 
+10	0018	ldarg.2
+11	0019	ldc.i4.1
+12	001A	ldelem.ref
+13	001B	isinst	[System.Private.CoreLib]System.DateTime
+14	0020	brfalse.s	0 (0000) ldarg.0 
+15	0022	ldarg.2
+16	0023	ldc.i4.1
+17	0024	ldelem.ref
+18	0025	unbox.any	[System.Private.CoreLib]System.DateTime
+19	002A	stloc	V_0 (0)
+20	002E	ldloca.s	V_0 (0)
+21	0030	ldstr	"yyyyMMdd"
+22	0035	call	instance string [System.Private.CoreLib]System.DateTime::ToString(string)
+23	003A	ldstr	"20200827"
+24	003F	call	bool [System.Private.CoreLib]System.String::op_Equality(string, string)
+25	0044	brfalse.s	0 (0000) ldarg.0 
+26	0046	ldc.i4.0
+27	0047	box	[System.Private.CoreLib]System.Boolean
+28	004C	ret
+
+	
+	
+0	0000	newobj	instance void Aspose.Words.License::.ctor()
+1	0005	ldstr	"PExpY2Vuc2U+CiAgPERhdGE+CiAgICA8TGljZW5zZWRUbz5TdXpob3UgQXVuYm94IFNvZnR3YXJlIENvLiwgTHRkLjwvTGljZW5zZWRUbz4KICAgIDxFbWFpbFRvPnNhbGVzQGF1bnRlYy5jb208L0VtYWlsVG8+CiAgICA8TGljZW5zZVR5cGU+RGV2ZWxvcGVyIE9FTTwvTGljZW5zZVR5cGU+CiAgICA8TGljZW5zZU5vdGU+TGltaXRlZCB0byAxIGRldmVsb3BlciwgdW5saW1pdGVkIHBoeXNpY2FsIGxvY2F0aW9uczwvTGljZW5zZU5vdGU+CiAgICA8T3JkZXJJRD4xOTA4MjYwODA3NTM8L09yZGVySUQ+CiAgICA8VXNlcklEPjEzNDk3NjAwNjwvVXNlcklEPgogICAgPE9FTT5UaGlzIGlzIGEgcmVkaXN0cmlidXRhYmxlIGxpY2Vuc2U8L09FTT4KICAgIDxQcm9kdWN0cz4KICAgICAgPFByb2R1Y3Q+QXNwb3NlLlRvdGFsIGZvciAuTkVUPC9Qcm9kdWN0PgogICAgPC9Qcm9kdWN0cz4KICAgIDxFZGl0aW9uVHlwZT5FbnRlcnByaXNlPC9FZGl0aW9uVHlwZT4KICAgIDxTZXJpYWxOdW1iZXI+M2U0NGRlMzAtZmNkMi00MTA2LWIzNWQtNDZjNmEzNzE1ZmMyPC9TZXJpYWxOdW1iZXI+CiAgICA8U3Vic2NyaXB0aW9uRXhwaXJ5PjIwMjAwODI3PC9TdWJzY3JpcHRpb25FeHBpcnk+CiAgICA8TGljZW5zZVZlcnNpb24+My4wPC9MaWNlbnNlVmVyc2lvbj4KICAgIDxMaWNlbnNlSW5zdHJ1Y3Rpb25zPmh0dHBzOi8vcHVyY2hhc2UuYXNwb3NlLmNvbS9wb2xpY2llcy91c2UtbGljZW5zZTwvTGljZW5zZUluc3RydWN0aW9ucz4KICA8L0RhdGE+CiAgPFNpZ25hdHVyZT53UGJtNUt3ZTYvRFZXWFNIY1o4d2FiVEFQQXlSR0pEOGI3L00zVkV4YWZpQnd5U2h3YWtrNGI5N2c2eGtnTjhtbUFGY3J0c0cwd1ZDcnp6MytVYk9iQjRYUndTZWxsTFdXeXNDL0haTDNpN01SMC9jZUFxaVZFOU0rWndOQkR4RnlRbE9uYTFQajhQMzhzR1grQ3ZsemJLZFZPZXk1S3A2dDN5c0dqYWtaL1E9PC9TaWduYXR1cmU+CjwvTGljZW5zZT4="	
+2	000A	call	uint8[] [System.Private.CoreLib]System.Convert::FromBase64String(string)
+3	000F	newobj	instance void [System.Private.CoreLib]System.IO.MemoryStream::.ctor(uint8[])
+4	0014	call	instance void Aspose.Words.License::SetLicense(class [netstandard]System.IO.Stream)
+
+
+
+78	00B0	ldarg	this
+79	00B4	callvirt	instance string System.Reflection.MemberInfo::get_Name()
+80	00B9	ldstr	"op_GreaterThan"
+81	00BE	call	bool System.String::op_Equality(string, string)
+82	00C3	brfalse.s	102 (00FA) ldloc V_5 (5)
+83	00C5	ldarg.s	parameters (4)
+84	00C7	ldc.i4.1
+85	00C8	ldelem.ref
+86	00C9	isinst	System.DateTime
+87	00CE	brfalse.s	102 (00FA) ldloc V_5 (5)
+88	00D0	ldarg.s	parameters (4)
+89	00D2	ldc.i4.1
+90	00D3	ldelem.ref
+91	00D4	unbox.any	System.DateTime
+92	00D9	stloc.s	V_4 (4)
+93	00DB	ldloca.s	V_4 (4)
+94	00DD	ldstr	"yyyyMMdd"
+95	00E2	call	instance string System.DateTime::ToString(string)
+96	00E7	ldstr	"20200827"
+97	00EC	call	bool System.String::op_Equality(string, string)
+98	00F1	brfalse.s	102 (00FA) ldloc V_5 (5)
+99	00F3	ldc.i4.0
+100	00F4	box	System.Boolean
+101	00F9	ret
+
+
+0	0000	ldarg.0
+1	0001	callvirt	instance string [System.Private.CoreLib]System.Reflection.MemberInfo::get_Name()
+2	0006	ldstr	"op_GreaterThan"
+3	000B	call	bool [System.Private.CoreLib]System.String::op_Equality(string, string)
+4	0010	brfalse.s	56 (0081) ldloc.0 
+5	0012	ldarg.2
+6	0013	ldlen
+7	0014	conv.i4
+8	0015	ldc.i4.2
+9	0016	bne.un.s	56 (0081) ldloc.0 
+10	0018	ldarg.2
+11	0019	ldc.i4.1
+12	001A	ldelem.ref
+13	001B	isinst	[System.Private.CoreLib]System.DateTime
+14	0020	brfalse.s	56 (0081) ldloc.0 
+15	0022	ldarg.2
+16	0023	ldc.i4.1
+17	0024	ldelem.ref
+18	0025	unbox.any	[System.Private.CoreLib]System.DateTime
+19	002A	nop
+20	002B	nop
+21	002C	ldstr	"yyyyMMdd"
+22	0031	call	instance string [System.Private.CoreLib]System.DateTime::ToString(string)
+23	0036	ldstr	"20200827"
+24	003B	call	bool [System.Private.CoreLib]System.String::op_Equality(string, string)
+25	0040	brfalse.s	56 (0081) ldloc.0 
+26	0042	ldc.i4.0
+27	0043	box	[System.Private.CoreLib]System.Boolean
+28	0048	ret
